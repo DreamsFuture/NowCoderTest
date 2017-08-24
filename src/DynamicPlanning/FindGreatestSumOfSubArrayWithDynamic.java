@@ -25,8 +25,10 @@ public class FindGreatestSumOfSubArrayWithDynamic {
 				sum[i+1] =sum[i] + arr[i];
 			}
 			
-			
+			System.out.print(sum[i+1]);
+			System.out.print(" ");
 		}
+		System.out.println('\n');
 		return getMax(sum);
 	}
 	
@@ -45,8 +47,16 @@ public class FindGreatestSumOfSubArrayWithDynamic {
 	
 	public static void main(String[] args) {
 		int[] arr = {2,4,-5,4,2,-2,4};
+		
 		System.out.println(find(arr));
 	}
 	
 
 }
+
+/*输出的结果：
+
+4 8 3 7 9 7 11 
+
+11
+*/
