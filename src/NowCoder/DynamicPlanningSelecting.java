@@ -61,8 +61,7 @@ public class DynamicPlanningSelecting {
                     	
                         fmax[k][i] = Math.max(fmax[k][i], Math.max(fmax[k-1][j]*arr[i],fmin[k-1][j]*arr[i]));
                         fmin[k][i] = Math.min(fmin[k][i], Math.min(fmax[k-1][j]*arr[i],fmin[k-1][j]*arr[i]));
-                        System.out.println(fmax[k]);
-                        System.out.println(fmin[k]);
+                        
                     }
                 }
                 res = Math.max(res,fmax[K][i]);

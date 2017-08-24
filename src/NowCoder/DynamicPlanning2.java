@@ -76,7 +76,7 @@ public class DynamicPlanning2 {
         for( int j =1 ; j <= d && (end-j)>=0 && (end-j)>= (k-1)-1; j++)
             //(end-j)>= (k-1)-1 是需要保证在向前寻找的时候，结尾元素之前至少还需要有k-1个元素，否则元素数目不够
         {
-            long res1 = array[end] * computeMaxEndBy(array, k-1, d, end-j);   ;
+            long res1 = array[end] * computeMaxEndBy(array, k-1, d, end-j);
             long res2 = array[end] * computeMinEndBy(array, k-1, d, end-j);
 
             long smaller = res1 < res2 ? res1: res2;
