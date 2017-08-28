@@ -10,17 +10,18 @@ public class BinaryTreeDepth {
 		int val = 0;
 		TreeNode left = null;
 		TreeNode right = null;
+		//构造方法
+		public TreeNode(int val) {this.val = val;}
+	}
+	
+	public int TreeDepth(TreeNode root) {
+		if (root == null) return 0; 
+		
+		//Dep[i] = max((left)Dep[i+1] + 1, (right)Dep[i+1] + 1)
+		int left = TreeDepth(root.left);
+		int right = TreeDepth(root.right);
 
-		public TreeNode(int val) {
-			this.val = val;
-
-		}
-
-		public int TreeDepth(TreeNode root) {
-			
-			return 0;
-
-		}
+		return (left > right) ? (left + 1) : (right + 1);
 
 	}
 }
