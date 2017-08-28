@@ -13,7 +13,10 @@ public class BinaryTreeIsBalanced {
 		TreeNode left = null;
 		TreeNode right = null;		
 	}
-	
+	/*
+	         递归的遍历方法，会重复计算很多次，例如判断根节点（节点1）是不是平衡，需要判断子节点2是否是平衡树，需要计算节点2的子节点是否是平衡，
+	         以此类推，但是节点2计算了节点3,4后，节点1还会继续计算节点3,4，这就重复了3两次，4三次等等
+	*/
 	public boolean isBalanced(TreeNode root){
 		
 		if(root == null) return false;
