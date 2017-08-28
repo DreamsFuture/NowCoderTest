@@ -17,25 +17,25 @@ public class GetNextNode {
  	public TreeLinkNode GetNextNodes(TreeLinkNode currentNode) {
  	
  		if(currentNode == null) return null;
- 		////如果有右子树，则找右子树的最左节点
+ 		//如果有右子树，则找右子树的最左节点
  		if(currentNode.right != null){
  			currentNode = currentNode.right;
  			
- 			//当前节点的子节点有左节点，则继续找下去，直到叶子节点
+ 			//当前节点的子节点如果有左子节点，则继续找下去，直到叶子节点
  			while(currentNode.left != null) currentNode = currentNode.left;
  			return currentNode;
  		}
  		
- 		////没右子树，则找第一个当前节点是父节点左孩子的节点
+ 		//如果当前节点没有右子树，则向上找到当前节点的先祖，如果先祖中第一次出现先祖节点是某个节点的左子节点，则表示我们找到了当前节点的下一个节点
  		while(currentNode.parent != null){
- 			//找到当前节点为父节点的左节点，则表示找到了当前节点的父节点，并返回此父节点，此父节点为下一个需要找的节点
+ 			
  			if(currentNode.parent.left == currentNode) return currentNode.parent;
  			
  			//当前节点为父节点的右节点，则继续while循环
  			currentNode = currentNode.parent;
  		}
  		
- 		////退到了根节点仍没找到，则返回null
+ 		//如果一直往先祖方向找，退到了根节点仍没找到，则返回null
  		return null;
  		
  		
